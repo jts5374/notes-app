@@ -65,7 +65,7 @@ const NotesContainer = ({notes, updateNote, deleteNote}) => {
       {
         notes.map((note) => 
           {
-            return <Note note={note} update = {updateNote} delete = {deleteNote}></Note>
+            return <Note note={note} updateNote = {updateNote} deleteNote = {deleteNote}></Note>
           }
         )
       }
@@ -119,7 +119,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NewNoteContainer newNote={newNote} important={important} newNoteState={newNoteState} importantState={importantState} addNewNote={addNewNote} ></NewNoteContainer>
-        <NotesContainer notes = {notes} updateNote = {updateNote} deleteNote = {deleteNote}></NotesContainer>
+        <NotesContainer notes = {notes} updateNote={updateNote} deleteNote={deleteNote}></NotesContainer>
       </header>
     </div>
   );
