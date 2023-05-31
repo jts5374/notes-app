@@ -46,14 +46,13 @@ const Note = ({note, updateNote, deleteNote}) => {
 
   return (
     <div id={id} className='note-container'>
-      <input type='text' value={content} onChange={(e) => contentState(e.target.value)}></input>
+      <input type='text' className = 'note-content' value={content} onChange={(e) => contentState(e.target.value)}></input>
       <br></br> 
-      <input type='checkbox' name={`${id}-important`} checked={important} onChange={(e) => importantState(e.target.checked)}></input>
-      <label for={`${id}-important`}>important</label>
+      <input type='checkbox' name={`${id}-important`} className='note-important' checked={important} onChange={(e) => importantState(e.target.checked)}></input>
+      <label className='note-important-label' for={`${id}-important`}>important</label>
       <br></br>
-      <button disabled={content === originalContent && important === originalImportantState} onClick={() => updateNote(id, content, important)}>Save Changes</button>
-      <br></br>
-      <button onClick={() => deleteNote(id)}>Delete</button>
+      <button className = 'note-button update-button' disabled={content === originalContent && important === originalImportantState} onClick={() => updateNote(id, content, important)}>Save Changes</button>
+      <button className='note-button delete-button' onClick={() => deleteNote(id)}>Delete</button>
     </div>
   )
 
